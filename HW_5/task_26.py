@@ -5,11 +5,15 @@
 # A = 3; B = 5 -> 243 (3⁵)
 #     A = 2; B = 3 -> 8 
 
-def power(a, b):
-    if b == 0:
+def power(A, B):
+    if B == 0:
         return 1
-    elif b % 2 == 0:
-        return power(a*a, b/2)
+    elif B == 1:
+        return A
     else:
-        return a * power(a, b-1)
-    
+        return A * power(A, B-1)
+
+A = int(input("Введите число A: "))
+B = int(input("Введите степень B: "))
+result = power(A, B)
+print(f"{A} в степени {B} равно {result}")
